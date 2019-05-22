@@ -17,26 +17,58 @@
     #demo {
     	width: 80%;
     	margin: 0 auto;
+        position: relative;
+        top: 310px;
+        text-align: center;
+
     }
 
     body {
-    	background-color: #E9F0FA;
+    	background-color: #757575;
     }
 
     button {
-    	background-color: #003580;
-    	color: #FFFFFF;
+    	background-color: #0BA62E;
+    	color: #000000;
     	border-radius: 10px;
     	padding: 10px;
+        font-weight: bold;
+        position: relative;
+        align-items: center;
     }
 
     p {
-    	color: #003580;
+    	color: #F87C00;
+        
     }
+    
+    .king{
+        position: relative;
+        text-align: center;
+        top: 300px;
+        color: #F87C00;
+        font-weight: bold;
+    
+    }
+
+    .dragon{
+        position: relative;
+        text-align: center;
+        top: 300px;
+        color: #F87C00;
+        font-weight: bold;
+    }
+            
+
     </style>
 </head>
 
 <body>
+        
+    <h1 class="king">Welcome to King´s Landing</h1>
+    <p class="dragon">And no.... Dragons are not smart ;)</p>
+        
+
     <div id="demo">
         <p id="par1"></p>
         <p id="hidden">"Sorry, no free room for <span id="n"></span> nights".</p>
