@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #box {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .player {
+        width: 50%;
+        padding: 20px;
+        border: 3px solid blue;
+        display: flex;
+        justify-content: center;
+    }
+
+    .para {
+        padding: 5px;
+        border: 3px solid red;
+        padding: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="box">
+            <div class="player">
+                <p id="player1"></p>
+                <button class="button">Roll</button>
+            </div>
+            <div class="player">
+                <p id="player2"></p>
+                <button class="button">Roll</button>
+            </div>
+        </div>
+        <div id="box">
+            <div id="result1">
+                <p id="numberOne0" class="para"></p>
+                <p id="numberTwo0" class="para"></p>
+                <p id="numberThree0" class="para"></p>
+                <p id="sum0" class="para"></p>
+            </div>
+            <div id="result2">
+                <p id="numberOne1" class="para"></p>
+                <p id="numberTwo1" class="para"></p>
+                <p id="numberThree1" class="para"></p>
+                <p id="sum1" class="para"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+    /*
+		var player = prompt("Enter Your Name");
+		document.getElementById("player1").innerHTML = player;*/
+
+    // function roll dice
+    var btn = document.getElementsByClassName("button");
+
+
+    function rollDice(i) {
+        var num1 = Math.floor(Math.random() * 10)
+        var num2 = Math.floor(Math.random() * 10)
+        var num3 = Math.floor(Math.random() * 10)
+        var sum = num1 + num2 + num3;
+        document.getElementById("numberOne"+i).innerHTML = num1;
+        document.getElementById("numberTwo"+i).innerHTML = num2;
+        document.getElementById("numberThree"+i).innerHTML = num3;
+        document.getElementById("sum"+i).innerHTML = sum;
+    }
+
+    for(let i = 0;i < btn.length; i++){
+    	    btn[i].addEventListener("click", function(){rollDice(i)}, false);
+    }    
+
+    
+    
+    function compare(res_1, res_2) {
+    	if (res_1 > res_2) {
+    		console.log("You won");
+    	} else {
+    		console.log("you lost");
+    	}
+    }
+
+    compare(9, 14);
+</script>
+</body>
+
+</html>
